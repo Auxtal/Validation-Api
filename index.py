@@ -16,8 +16,7 @@ def validate_time():
         return jsonify({"error": "Time is required"}), 400
 
     match = re.search(time_regex, time)
-    print(f"Time Match:\n{match}")
-    return jsonify({"result": True if match else False}), 200
+    return jsonify("yes" if match else "no"), 200
 
 @app.route("/validate/email", methods=["POST"])
 def validate_email():
@@ -26,8 +25,4 @@ def validate_email():
         return jsonify({"error": "Email is required"}), 400
 
     match = re.search(email_regex, email)
-    print(f"Email Match:\n{match}")
-    return jsonify({"result": True if match else False}), 200
-
-if __name__ == "__main__":
-    app.run()
+    return jsonify("yes" if match else "no"), 200
