@@ -30,4 +30,4 @@ def validate_email():
     return jsonify({"result": True if match else False}), 200
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
